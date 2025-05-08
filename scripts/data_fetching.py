@@ -1,10 +1,15 @@
 import requests
-import requests
 import pandas as pd
 import time
 import os
+from dotenv import load_dotenv
 
-API_KEY = "KuqePRzLzFeVA3dOvXHXWQSnCtj0qNih5YfBPKq6"
+load_dotenv()  # Load environment variables from .env file
+
+API_KEY = os.getenv("EIA_API_KEY")
+
+
+
 
 def fetch_eia_data(series_id, api_key, start_date, end_date):
     url = f"https://api.eia.gov/v2/seriesid/{series_id}"
@@ -43,7 +48,7 @@ def fetch_eia_data(series_id, api_key, start_date, end_date):
 
 
 if __name__ == "__main__":
-    # Change to your desired output folder
+   
     os.makedirs("data/raw/", exist_ok=True)
 
     BRENT_ID = "PET.RBRTE.D"

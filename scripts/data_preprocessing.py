@@ -25,4 +25,6 @@ merged['Spread'] = 10_000 * (merged['Brent'] / merged['WTI'] - 1)  # Spread in b
 # === Step 7: Save processed data ===
 merged.to_csv('data/processed/spread_data.csv', index=False)
 
+
+
 print("Merged dataset saved at data/processed/spread_data.csv")
